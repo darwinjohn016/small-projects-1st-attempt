@@ -1,0 +1,205 @@
+@import 'variables.scss';
+
+.login-bg
+{
+	background: $complementary;
+	@include container1(100%,100vh);
+	&::before
+	{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include container2(50%,100%);
+		background: #038657;
+	}
+	.login
+	{
+		@include container(1200px,100vh);
+		padding: 1.5em;
+		display: grid;
+		grid-template-columns: repeat(auto-fit,450px);
+		grid-auto-rows: 85vh;
+		justify-content: center;
+		align-content: center;
+		.login-content-bx
+		{
+			background: #e4e1e1;
+			padding: 2.5em;
+			@include flex(space-around,flex-start,column,nowrap);
+			.login-header
+			{
+				margin-bottom: 0.5em;
+				h1
+				{
+					font-size: $h1;
+					color: $complementary;
+				}
+			}
+			.login-socmed-bx 
+			{
+				p
+				{
+					margin: 0.7em 0;
+					font-size: $p3;
+					font-weight: lighter;
+				}
+				.login-socmed-links
+				{
+					width: 150px;
+					@include flex(space-between,flex-start,row,nowrap);
+					a
+					{
+						font-size: $h2;
+						color: $dominant;
+						border-radius: 10px;
+						text-decoration: none;
+						@include flex(center,center,row,nowrap);
+						@include container2(35px,35px);
+						&:nth-of-type(1)
+						{
+							background: #4867AA;
+						}
+						&:nth-of-type(2)
+						{
+							background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+						}
+						&:nth-of-type(3)
+						{
+							background: #50ABF1;
+						}
+					}
+				}
+			}
+			.login-email-bx
+			{
+				.login-input-bx
+				{
+					margin: 0.5em 0;
+					@include flex(center,flex-start,column,nowrap);
+					label
+					{
+						margin: 0.5em 0;
+						font-size: $p2;
+					}
+					input
+					{
+						width: 120%;
+						outline: none;
+						padding: 0.3em 0.5em;
+						font-size: $p2;
+					}
+				}
+				.login-additional-bx
+				{
+					width: 120%;
+					@include flex(space-between,center,row,nowrap);
+					a
+					{
+						text-decoration: none;
+						color: $accent;
+						font-size: $p3;
+					}
+					input,label
+					{
+						font-size: $p3;
+					}
+				}
+				button
+				{
+					margin-top: 1.5em;
+					@extend .btn-global;
+					padding: 0.5em 1em;
+					width: 120px;
+					letter-spacing: 1px;
+					font-size: $p2;
+				}
+			}
+		}
+		.login-img-bx
+		{
+			background: $dominant;
+			padding: 2.5em;
+			@include flex(center,center,column,nowrap);
+			text-align: center;
+			h3
+			{
+				font-size: $h2;
+				font-weight: normal;
+			}
+			h2
+			{
+				font-size: calc(2.5em + 0.5vw);
+				color: $complementary;
+			}
+			img
+			{
+				height: 40vh;
+			}
+		}
+	}
+}
+
+@media(max-width: 950px)
+{
+	.login-bg
+	{
+		.login
+		{
+			.login-img-bx
+			{
+				display: none;
+			}
+		}
+	}
+
+}
+
+@media(max-width: 480px)
+{
+	.login-bg
+	{
+		.login
+		{
+			grid-template-columns: repeat(auto-fit,100%);
+			.login-content-bx
+			{
+				.login-email-bx
+				{
+					.login-input-bx
+					{
+						input
+						{
+							width: 100%;
+						}
+					}
+					.login-additional-bx
+					{
+						width: 100%;
+						@include flex(center,flex-start,column,nowrap);
+						a
+						{
+							margin-top: 0.5em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 375px)
+{
+	.login-bg
+	{
+		.login
+		{
+			grid-auto-rows: 93vh;
+			.login-content-bx
+			{
+				padding: 1.5em;
+			}
+		}
+
+	}
+}

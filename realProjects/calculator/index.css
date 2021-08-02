@@ -1,0 +1,158 @@
+.img-bx:nth-of-type(1)
+{
+	height: 100vh;
+	width: 50vw;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: scaleX(-1) translate(20%,10%);
+	background: url('images/calculator.svg');
+	background-size: contain;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	filter: opacity(0.5);
+}
+.img-bx:nth-of-type(2)
+{
+	height: 100vh;
+	width: 50vw;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translate(115%,10%);
+	background: url('images/calculator.svg');
+	background-size: contain;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	filter: opacity(0.5);
+}
+.calculator-container
+{
+	width: 450px;
+	height: 450px;
+	padding: 2em;
+	background: rgba(0,0,0,0.45);
+	z-index: 2;
+}
+.previous-operand-text
+{
+	height: 30px;
+	text-align: right;
+	border-bottom: 1px solid rgb(217,217,217);
+	font-size: 1.2em;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	letter-spacing: 0.5px;
+	color: rgb(217,217,217);
+}
+.current-operand-text
+{
+	height: 50px;
+	border-bottom: 1px solid rgb(217,217,217);
+	font-size: 1.5em;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	letter-spacing: 0.5px;
+	color: rgb(217,217,217);
+}
+.calculator-btn-bx
+{
+	display: grid;
+	grid-template-columns: repeat(4,minmax(auto,1fr));
+	height: 300px;
+	padding-top: 1em;
+}
+.calculator-btn-bx button
+{
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 1.2em;
+	color: rgb(217,217,217);
+	border: 1px solid rgb(217,217,217,0.1);
+ 
+}
+
+.calculator-btn-bx .btn-clear
+{
+	background: rgb(0,70,0,0.1);
+	font-weight: 700;
+}
+
+.calculator-btn-bx .btn-clear:hover, .calculator-btn-bx .btn-clear:active
+{
+	background: rgb(0,70,0,0.3);
+}
+
+.calculator-btn-bx .btn-number
+{
+	background: rgb(0,255,110,0.1);
+}
+
+.calculator-btn-bx .btn-number:hover, .calculator-btn-bx .btn-number:active
+{
+	background: rgb(0,255,110,0.3);
+}
+
+.calculator-btn-bx .btn-operator
+{
+	background: rgb(89,117,185,0.1);
+}
+
+.calculator-btn-bx .btn-operator:hover, .calculator-btn-bx .btn-operator:active
+{
+	background: rgb(89,117,185,0.3);
+}
+
+
+.calculator-btn-bx button:nth-of-type(1)
+{
+	grid-column: 1/3;
+}
+.calculator-btn-bx button:nth-of-type(2)
+{
+	grid-column: 3/5;
+}
+
+@media (max-width: 1024px)
+{
+	.img-bx
+	{
+		display: none;
+	}
+}
+
+@media (max-width: 480px)
+{
+	.calculator-container
+	{
+		width: 310px;
+		height: 350px;
+		padding: 1.5em;
+	}
+	.previous-operand-text
+	{
+		height: 20px;
+		font-size: 1em;
+	}
+	.current-operand-text
+	{
+		height: 40px;
+		font-size: 1.1em;
+	}
+	.calculator-btn-bx
+	{
+		height: 250px;
+	}
+}
+
+
+
+
+
+
+
+
+

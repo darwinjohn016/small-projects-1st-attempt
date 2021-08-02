@@ -1,0 +1,42 @@
+@mixin container($width,$height)
+{
+	position: relative;
+	max-width: $width;
+	min-height: $height;
+	margin: 0 auto;
+	padding: 4em 2em; 
+}
+
+@mixin container2($width,$height)
+{
+	position: relative;
+	width: $width;
+	min-height: $height;
+}
+
+
+@mixin flex($justify,$align,$direction,$wrap)
+{
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+	flex-wrap: $wrap
+}
+
+
+/* Colors */
+$dominant-color: #FFFFFF;
+$dominant-color-2: #474747;
+$complementary-color: #00613D;
+$accent-color: #008288;
+
+/* Responsive Font Sizes 1200px and Below */
+$rheadline: clamp(2.2em,5vw,2.5em);
+$rh1: clamp(1.7em,5vw,2em);
+$rp: clamp(1em,5vw,1.1em); 
+
+/* Responsive Font Sizes 2560px to 1400px */
+
+
+/* Standard Font Sizes */

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root
+{
+	--clr-light: #ffe3e3;
+	--clr-dark: #000;
+	--clr-gray: #3B3B3B;
+	--clr-green: #009905;
+	--clr-light-green: #05ff0d;
+}
+
+*,*::before,*::after
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif
+	,'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+}
+
+html,body
+{
+	overflow-x: hidden;
+	height: 100%;
+	scroll-behavior: smooth;
+	scroll-padding-top: clamp(1.5rem,5vw,2.5rem);
+}
+
+body
+{
+	line-height: 1.6;
+}
+
+h1,h2,h3,h4
+{
+	line-height: 1.1;
+	max-width: 75ch;
+}
+
+h1
+{
+	font-size: clamp(2rem,5vw,2.3rem);
+}
+
+h2
+{
+	font-size: clamp(1.5rem,5vw,1.8rem);
+}
+
+h3
+{
+	font-size: clamp(1rem,5vw,1.3rem);
+}
+
+h4
+{
+	font-size: clamp(1rem,5vw,1.1rem);
+}
+
+p
+{
+	font-weight: 300;
+	max-width: 75ch;
+	font-size: clamp(1rem,5vw,1.05rem);
+}
+
+label
+{
+	font-weight: 300;
+	max-width: 75ch;
+	font-size: clamp(1rem,5vw,1.05rem);
+}
+
+a
+{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: clamp(0.9rem,5vw,1rem);
+}
+
+button
+{
+	font-size: clamp(0.9rem,5vw,1rem);
+	border: none;
+	text-transform: uppercase;
+	padding: 0.4rem 0.6rem;
+	font-weight: bold;
+}
+
+input
+{
+	font-size: clamp(1rem,5vw,1.05rem);
+}
+
+.wrapper
+{
+	margin: 0 auto;
+	width: min(90%,1700px);
+}
+
+/* Hero Section */
+
+.hero-header
+{
+	background: lightseagreen;
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.hero-header-wrapper
+{
+	min-height: 15vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hero-nav
+{
+	display: none;
+}
+
+.hamburger-btn
+{
+	font-size: clamp(1.3rem,5vw,1.6rem);
+}
+
+.hero-section
+{
+	background: lime;
+}
+
+.hero-section-wrapper
+{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+.section
+{
+	min-height: 100vh;
+	background: red;
+}
+
+@media (min-height: 600px){
+	.section
+	{
+		background: red;
+	}
+}

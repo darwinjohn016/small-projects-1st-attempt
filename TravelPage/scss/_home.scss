@@ -1,0 +1,170 @@
+@import './_variables.scss';
+
+.img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url("../images/boracay-bg.jpg");
+	width: 100vw;
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center center;
+	z-index: -1;
+	filter: brightness(45%);
+	background-repeat: no-repeat;
+
+}
+.home-container
+{
+	@include container(1200px,100vh);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 6fr; 
+	grid-template-areas: 
+	"header header"
+	"content form";
+
+	header
+	{
+		grid-area: header;
+		@include flex(space-between,center,row);
+
+		h1
+		{
+			color: $complementary-color;
+			font-size: $rlogo;
+		}
+		nav ul
+		{
+			list-style: none;
+			display: flex;
+			li
+			{
+				margin-left: 2em;
+				a
+				{
+					text-decoration: none;
+					font-size: $rnav;
+					color: $dominant-color;
+				}
+			}
+		}
+	}
+
+	.content
+	{
+		grid-area: content;
+		@include flex(center,flex-start,column);
+		margin-right: 1em;
+
+		h1
+		{
+			font-size: $rheadline;
+			color: $dominant-color;
+
+		}
+
+		h3
+		{
+			font-size: $rsubheadline;
+			font-weight: 500;
+			color: $dominant-color;
+		}
+	}
+
+	.form
+	{
+		grid-area: form;
+		@include flex(flex-end,center,row);
+
+		form
+		{
+			position: relative;
+			height: 470px;
+			width: 520px;
+			position: relative;
+			background:rgba(213,204,204,0.1);
+			backdrop-filter: blur(2px);
+			border-radius: 10px;
+
+
+			h1
+			{
+				color:$complementary-color;
+				text-align: center;
+				padding: 0.3em 0;
+				font-weight: 500;
+			}
+			.btn-box
+			{
+				@include flex(space-around,center,row);
+				padding: 0.8em 0;
+				border-bottom: 1px solid rgba(213,204,204,0.5);
+
+				button
+				{
+					padding: 0.5em 1em;
+					font-weight: bold;
+					font-size: 1em;
+					color: $accent-color;
+					outline:none;
+					border:none;
+					cursor: pointer;
+					border-radius: 5px;
+				}
+			}
+
+			.main-input-bx
+			{
+				display: flex;
+				margin-top: 1em;
+				
+				.input-bx
+				{
+					width: 50%;
+					@include flex(flex-start,flex-start,column);
+					margin: 0 1em;
+					font-size: 1.1em;
+
+					
+					label
+					{
+						margin-bottom: 0.2em;
+						color: $dominant-color;
+					}
+
+					input
+					{
+						width: 100%;
+						padding: 0.2em;
+						border:none;
+						outline:none;
+						margin-bottom: 1.5em;
+						font-size: 1em;
+					}
+
+				
+				}
+			}
+			.flight-btn
+			{
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+				padding: 0.5em 1em;
+				font-weight: bold;
+				font-size: 1.1em;
+				color: $dominant-color;
+				background: $accent-color;
+				border:none;
+				outline:none;
+				cursor:pointer;
+				border-radius: 5px;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,136 @@
+@import 'variables.scss';
+
+.footer-bg
+{
+	@include container1(100%,30vh);
+	background: $complementary;
+	.footer
+	{
+		@include container(1200px,30vh);
+		.footer-content-grid
+		{
+			display: grid;
+			grid-template-columns: repeat(auto-fit,220px);
+			grid-auto-rows: 150px;
+			grid-gap: 1.5em;
+			.footer-content-bx
+			{
+				@include flex(flex-start,flex-start,column,nowrap);
+				h3
+				{
+					font-size: $p2;
+					font-weight: bold;
+					color: $dominant;
+					margin-bottom: 0.5em;
+					.footer-btn
+					{
+						font-size: $p2;
+						font-weight: bold;
+						color: $dominant;
+						background: transparent;
+						cursor: pointer;
+						border: none;
+						outline: none;
+						padding: 1em;
+						display: none;
+					}
+				}
+				a
+				{
+					font-size: $p2;
+					font-weight: lighter;
+					color: $dominant;
+					text-decoration: none;
+				}
+				.socmed-content-bx
+				{
+					width: 100%;
+					@include flex(flex-start,flex-start,row,nowrap);
+					a
+					{
+						margin-right: 1em;
+						font-size: $h1;
+					}
+				}
+			}
+		}
+		.footer-content
+		{
+			border-top: 1px solid $dominant;
+			p
+			{
+				&:first-child
+				{
+					font-size: $p3;
+				}
+				font-size: calc(0.7em + 0.1vw);
+				color: $dominant;
+				font-weight: lighter;
+				margin: 0.6em 0;
+			}
+		}
+	}
+}
+
+@media(max-width: 1080px)
+{
+	.footer-bg
+	{
+		.footer
+		{
+			.footer-content-grid
+			{
+				display: grid;
+				grid-template-columns: 220px;
+				grid-auto-rows: auto;
+				grid-gap: 0.5em;
+				.footer-content-bx
+				{
+					h3
+					{
+						margin-bottom: 0;
+						.footer-btn
+						{
+							padding: 1em;
+							display: inline-block;
+						}
+					}
+					a
+					{
+						padding-left: 2.5em;
+						display: none;
+						margin: 0.5em 0;
+					}
+					&:last-child
+					{
+						margin-bottom: 1em;
+					}
+					.socmed-content-bx
+					{
+						a
+						{
+							padding-left: 1.5em;
+							margin-right: 0.5em;
+						}
+					}
+				}
+			}
+			.footer-content
+			{
+				margin-left: 0.5em;
+			}
+		}
+	}
+}
+
+@media(max-width: 375px)
+{
+	.footer-bg
+	{
+		.footer
+		{
+			padding: 2.5em 1.5em;
+		}
+	}
+}
+

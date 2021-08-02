@@ -1,0 +1,273 @@
+@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+*,*::before,*::after
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif, "Font Awesome 5 Free","Font Awesome 5 Brands";
+}
+body,html
+{
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+.disappear
+{
+	display: none !important;
+}
+.appear
+{
+	display: flex !important;
+}
+
+.clip-path-disappear
+{
+	clip-path: inset(0 0 0 100%);
+}
+.user-img-global
+{
+	border-radius: 50%;
+	@include flex(center,center,row,nowrap);
+	@include container2(55px,55px);
+}
+.btn-global
+{
+	background: $accent;
+	color: $dominant;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: $p2;
+}
+
+.slideRight
+{
+	animation: slideRight 0.5s ease-in forwards;
+}
+
+@keyframes slideRight
+{
+	0%
+	{
+		clip-path: inset(0 0 0 100%);
+	}
+	100%
+	{
+		clip-path: inset(0 0 0 0);
+	}
+}
+.slideLeft
+{
+	animation: slideLeft 0.5s ease-in forwards;
+}
+
+@keyframes slideLeft
+{
+	0%
+	{
+		clip-path: inset(0 0 0 0);
+	}
+	100%
+	{
+		clip-path: inset(0 0 0 100%);
+	}
+}
+
+.user-anchor-bx-global
+{
+	width: 100%;
+	@include flex(space-between,center,row,nowrap);
+	a
+	{
+		width: 80%;
+		color: $dominant;
+		text-decoration: none;
+		font-size: $p2;
+	}
+	i
+	{
+		width: 10%;
+		color: $dominant;
+	}
+}
+
+.overlay-global
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	@include container2(100%,100%);
+	background: rgba(0,0,0,0.5);
+	z-index: 80;
+}
+
+@import 'home.scss';
+@import 'destination.scss';
+@import 'services.scss';
+@import 'contact.scss';
+@import 'footer.scss';
+@import 'testimonials.scss';
+@import 'login.scss';
+
+.hotels-bg
+{
+	@include container1(100%,100vh);
+	.hotels
+	{
+		@include container(1200px,100vh);
+		padding: 3em;
+		background: green;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: auto;
+		grid-template-areas: 
+		'header header'
+		'map duration'
+		'options lists';
+		grid-gap: 1em;
+		header
+		{
+			grid-area: header;
+			.hotels-header
+			{
+				@include flex(space-between,center,row,nowrap);
+				.hotels-logo-input
+				{
+					width: 50%;
+					@include flex(flex-start,flex-start,column,nowrap);
+					h1
+					{
+						font-size: $h1;
+						margin-bottom: 0.5em;
+					}
+					input
+					{
+						width: 100%;
+					}
+				}
+				.user-img
+				{
+					@extend .user-img-global;
+					background: $accent;
+				}
+			}
+			.hotels-navigation
+			{
+				margin-top: 1em;
+				nav
+				{
+					a
+					{
+						text-decoration: none;
+						font-size: $p1;
+						margin-right: 1.5em;
+					}
+				}
+			}
+		}
+		.hotels-map-bx
+		{
+			grid-area: map;
+			background: red;
+			position: relative;
+		}
+		.hotels-content-input-1
+		{
+			grid-area: duration;
+			background: orange;
+		}
+		.hotels-content-input-2
+		{
+			grid-area: options;
+			background: yellow;
+			.hotels-checkbox-bx
+			{
+				padding: 1em;
+				.hotels-checkbox
+				{
+					label
+					{
+						margin-left: 0.5em;
+					}
+				}
+			}
+		}
+		.hotels-content-lists
+		{
+			grid-area: lists;
+			background: lime;
+			position: relative;
+			height: 1350px;
+			.swiper-container
+			{
+				grid-area: lists;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include container2(100%,100%);
+				.swiper-slide
+				{
+					@include container2(100%,250px);
+					@include flex(space-between,center,row,nowrap);
+					.hotels-img-bx
+					{
+						@include container2(40%,100%);
+						img
+						{
+							@include container2(100%,100%);
+							object-fit: cover;
+						}
+					}
+					.hotels-info-bx
+					{
+						@include container2(30%,100%);
+						padding: 0.5em;
+					}
+					.hotels-additional-bx
+					{
+						@include container2(30%,100%);
+						padding: 0.5em;
+					}
+				}
+			}
+			.hotels-pagination-btn
+			{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				@include container2(100%,50px);
+				background: yellow;
+				@include flex(center,center,row,nowrap);
+				.prev-btn,.next-btn,.first-btn,.last-btn
+				{
+					position: relative;
+					z-index: 2;
+				}
+				.swiper-pagination
+				{
+					position: relative;
+					overflow: hidden;
+					margin: 0 0.5em;
+					@include flex(flex-start,center,row,nowrap);
+				}
+				.swiper-pagination-bullet
+				{
+					background: red;
+					border-radius: 50%;
+					outline: none;
+					@include container2(10px,10px);
+					padding: 1em;
+					@include flex(center,center,row,nowrap);
+					&:not(.swiper-pagination-bullet-active)
+					{
+						opacity: 1;
+						background: yellow;
+					}
+				}
+			}
+		}
+	}
+}

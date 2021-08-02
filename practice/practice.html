@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dom Manipulation Practice </title>
+	<link rel="stylesheet" type="text/css" href="practice.css">
+</head>
+
+<body>
+	<div class="home">
+		<header>
+			<nav>
+				<div class="home__indicator"></div>
+					<a href="#">Home</a>
+					<a href="#about">About</a>
+					<a href="#services">Services</a>
+					<a href="#">Testimonials</a>
+					<a href="#">Contact Us</a>
+			</nav>
+		</header>
+		<section>
+			<div class="tilt">
+				<h1>Hello World</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<span></span>
+			</div>
+		</section>
+	</div>	
+
+	<div class="home" id="about">
+		<div class="home__container">
+			<div class="home__cube">
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>				
+			</div>
+
+			<button class="rotx">RotateX</button>
+			<button class="roty">RotateY</button>
+			<button class="rotz">RotateZ</button>
+		</div>
+	</div>
+
+	<div class="home" id="services">
+		<div class="home__container-2">
+			<div class="home__content">
+				<div class="img" style="--i:1;"><img src="images/boracay-bg.jpg"></div>
+				<div class="img" style="--i:2;"><img src="images/luneta-bg.jpg"></div>
+				<div class="img" style="--i:3;"><img src="images/mayon-bg.jpg"></div>
+				<div class="img" style="--i:4;"><img src="images/rice-terraces-bg.jpg"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="home">
+		<div class="header">
+			<nav>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Section</a></li>
+					<li><a href="">About Us</a></li>
+					<li><a href="">Contact Us</a></li>
+					<li><a href="">More</a>
+						<ul>
+							<li><a href="">Hello</a></li>
+							<li><a href="">World</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<section>
+				<div class="content">
+					<div class="img-bx " style="--l:0;"><img src="images/boracay-bg.jpg"></div>
+					<div class="img-bx" style="--l:1;"><img src="images/luneta-bg.jpg"></div>
+					<div class="img-bx" style="--l:2;"><img src="images/mayon-bg.jpg"></div>
+					<div class="img-bx" style="--l:3;"><img src="images/el-nido-bg.jpg"></div>
+				</div>
+				<!-- <button class="prev">Prev</button>
+				<button class="next">Next</button> -->
+				<div class="dot-bx">
+					<button class="dot">1</button>
+					<button class="dot">2</button>
+					<button class="dot">3</button>
+					<button class="dot">4</button>
+				</div>
+		</section>
+	</div>
+
+	<div class="home">
+		<section>
+			<div class="simple-list">
+				
+			</div>
+			<div class="simple-pagination">
+			</div>
+
+			<button class="prev1">Prev1</button>
+			<button class="next1">Next1</button>
+		</section>
+	</div>
+
+
+
+	<script src="practice.js"></script>
+</body>
+
+
+</html>

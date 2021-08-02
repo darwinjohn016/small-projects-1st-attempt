@@ -1,0 +1,247 @@
+@import './_variables.scss';
+.bg-2
+{
+	@include container(100%,50vh);
+	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../images/vacation-bg.jpg);
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+
+	.book-now-container
+	{
+		@include flex(center,flex-start,column);
+		@include container(1200px,50vh);
+
+		h2
+		{
+			color: $dominant-color;
+			font-size: $rh2;
+			font-weight: 500;
+		}
+
+		a
+		{
+			margin-top: 1.5em;
+			text-decoration: none;
+			padding: 0.4em 0.7em;
+			color: $dominant-color;
+			font-size: 1.1em;
+			letter-spacing: 1px;
+			font-weight: bolder;
+			background: $accent-color;
+			border-radius: 10px;
+			text-transform: uppercase;
+	}
+
+	}
+}
+
+
+
+
+
+.bg-3
+{
+	@include container(100%,100vh);
+	
+	.services-container
+	{
+		@include container(1200px,100vh);
+		.header
+		{
+			width: 55vw;
+			padding-top: 3em;
+
+			h1
+			{
+				font-size: $rh1;
+				color: $grayish-color;
+				margin-bottom: .5em;
+			}
+		}
+
+		.content-grid
+		{
+			display: grid;
+			grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+			grid-auto-rows: minmax(320px,auto);
+			padding: 2em 0;
+			position: relative;
+
+			.content-bx
+			{
+				margin: 1em 3em;
+				position: relative;
+				@include flex(space-between,center,row);
+				box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+				border-radius: 20px;
+				background: $grayish-color-2;
+
+				&:nth-child(odd)
+				{
+					margin-left: 0;
+				}
+				&:nth-child(even)
+				{
+					margin-right: 0;
+				}		
+				img
+				{
+					position: absolute;
+					width: 40%;
+					height: 100%;
+					left: 0;
+					object-fit: contain;
+					padding: 1em;
+				}
+
+				.txt-box
+				{
+					padding: 1em;
+					position: absolute;
+					width: 60%;
+					height: 100%;
+					right: 0;
+					@include flex(space-evenly,flex-start,column);
+
+					h2
+					{
+						color: $accent-color;
+					}
+					p
+					{
+						margin-bottom: 1em;
+					}
+					a
+					{
+						text-decoration: none;
+						padding: 0.4em;
+						color: $greenish-color;
+						font-size: 1em;
+						letter-spacing: 1px;
+						font-weight: bold;
+						background: $dominant-color;
+						border-radius: 10px;
+						box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+					}
+				}
+			}
+		}
+
+	}	
+}
+
+.bg-4
+{
+	@include container(100%,300px);
+	background: $greenish-color;
+	z-index: 5;
+	.review-container
+	{
+		@include container(1200px,300px);
+		h1
+		{
+			padding-top: 1.5em;
+			font-size: $rh1;
+			color: $dominant-color;
+		}
+
+		.content-grid
+		{
+			display: grid;
+			grid-template-columns: repeat(auto-fit,minmax(350px,auto));
+			grid-auto-rows: minmax(280px,auto);
+			padding: 1.5em 0 3em 0;
+			position: relative;
+			z-index: 5;
+
+			.content-bx
+			{
+				position: relative;
+				margin: 1em 2em;
+				background: $dominant-color;
+				padding: 1.5em;
+				border-radius: 10px;
+				background: $accent-color;
+
+
+				&::before
+				{
+					content: '';
+					position: absolute;
+					bottom: -5px;
+					left: -5px;
+					width: 50%;
+					height: 50%;
+					background: $complementary-color;
+					z-index: -1;
+					border-radius: 10px;
+				}
+
+				&::after
+				{
+					content: '';
+					position: absolute;
+					top: -5px;
+					right: -5px;
+					width: 50%;
+					height: 50%;
+					background: $complementary-color;
+					z-index: -1;
+					border-radius: 10px;
+				}
+
+				&:first-child
+				{
+					margin-left: 0;
+				}
+				&:nth-child(even)
+				{
+					margin: 1em;
+				}
+				&:last-child
+				{
+					margin-right: 0;
+				}
+
+
+				.img-bx
+				{
+					width: 100%;
+					height: 25%;
+					position: relative;
+					@include flex(flex-start,center,row);
+					color: $dominant-color;
+					img
+					{
+						width: 20%;
+						height: 100%;
+						object-fit: cover;
+						border-radius: 50%;
+					}
+					h3
+					{
+						font-size: 1.5em;
+						margin-left: 1em;
+					}
+
+				}
+				.txt-bx
+				{
+					margin-top: 1em;
+					width: 100%;
+					height: 75%;
+					@include flex(space-evenly,flex-start,column);
+					color: $dominant-color;
+					position: relative;
+
+					.stars
+					{
+						color: $complementary-color;
+					}
+
+				}
+			}
+		}
+	}
+}

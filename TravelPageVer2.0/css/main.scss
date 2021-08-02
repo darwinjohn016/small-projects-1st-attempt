@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import '_variables.scss';
+
+*,*::before,*::after
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif,"Font Awesome 5 Free","Font Awesome 5 Brands";
+}
+
+html,body
+{
+	scroll-behavior: smooth;
+	overflow-x:hidden;
+}
+
+.visible
+{
+	display: flex !important;
+}
+
+.visible2
+{
+	display: grid !important;
+}
+
+.active
+{
+	background: #00575C !important;
+}
+
+
+.btn
+{
+	background: $accent-color;
+	color: $dominant-color;
+	text-decoration: none;
+	padding: 0.6em 0.8em;
+	font-size: 1em;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+@import '_home.scss';
+@import '_destination.scss';
+@import '_services.scss';
+
+.services-bg
+{
+	background: #028e5a;
+	.services
+	{
+		@include container(1200px,100vh);
+		.services-bx
+		{
+			@include flex(center,flex-start,row,wrap);
+			margin: 5em 0;
+			.services-content-bx
+			{
+				z-index: 2;
+				color: #cac8c8;
+				@include container2(400px,70vh);
+				h2
+				{
+					font-size: 1.8em;
+					margin-bottom: 1em;
+				}
+				p
+				{
+					font-weight: 200;
+					text-align: justify;					
+				}
+			}
+			.services-img-bx
+			{
+				@include container2(500px,80vh); 
+				img
+				{
+					border-radius: 10px;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			&:nth-child(2)
+			{
+				justify-content: flex-end;
+				flex-direction: row-reverse;
+				.services-img-bx
+				{
+					margin-right: 2em;
+					&::before
+					{
+						content: 'Travel Accomodation';
+						position: absolute;
+						left: 110%;
+						transform: rotate(-90deg);
+						top: 0;
+						height: 100%;
+						font-size: 3.5em;
+						font-weight: 600;
+						color: #05fda3;
+						opacity: 0.2;
+					}
+				}
+			}
+			&:nth-child(3)
+			{
+				justify-content: flex-end;
+				.services-img-bx
+				{
+					margin-left: 2em;
+					&::before
+					{
+						content: 'Travel Guides';
+						position: absolute;
+						right: 130%;
+						transform: rotate(90deg);
+						height: 100%;
+						top: 0;
+						font-size: 4em;
+						font-weight: 600;
+						color: #05fda3;
+						opacity: 0.2;
+					}
+				}
+			}
+			&:nth-child(4)
+			{
+				justify-content: flex-end;
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}

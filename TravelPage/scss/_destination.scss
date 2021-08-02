@@ -1,0 +1,110 @@
+@import './_variables.scss';
+
+.bg
+{
+	background:$dominant-color;
+	@include container(100%,100vh);
+	position: relative;
+
+
+	&::before
+	{
+		content: '';
+		position: absolute;
+		right: 0;
+		background: $greenish-color;
+		width: 50%;
+		height: 100%;	
+	
+	}
+}
+
+
+
+.destination-container
+{
+
+	@include container(1200px,100vh);
+	.header
+	{
+		position: relative;
+	}
+
+	h1
+	{
+		padding-top: 1em;
+		font-size: $rh1;
+		color: $grayish-color;
+		width: 50%;
+
+		span
+		{
+			position: relative;
+			font-size: 1.2em;
+		}
+	}
+
+	.btn-bx
+	{
+		padding: 1.5em 0;
+
+		button
+		{
+			padding: 0.5em 1em;
+			font-size: 1em;
+			margin-right: 1em;
+			color: $dominant-color;
+			background: $accent-color;
+			border:none;
+			outline:none;
+			cursor:pointer;
+			border-radius: 5px;
+		}
+	}
+
+	.content-grid
+	{
+		display: grid;
+		grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+		grid-auto-rows: minmax(300px,auto);
+		justify-content: space-between;
+		padding: 2em 0;
+
+		.content-bx
+		{
+			position: relative;
+			margin: 0 3em 5em 3em;
+
+			&:nth-child(odd)
+			{
+				margin-left: 0;
+			}
+			&:nth-child(even)
+			{
+				margin-right: 0;
+			}	
+			img
+			{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				cursor: pointer;
+				z-index: 2;
+				filter: brightness(80%);
+				border-radius: 10px;
+
+			}
+			.txt-bx
+			{
+				position: absolute;
+				width: 100%;
+				height: 85%;
+			}
+			
+		}
+		
+	}
+}
+
+

@@ -1,0 +1,35 @@
+@mixin flex($justify,$align,$direction)
+{
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin container($width,$height)
+{
+	max-width: $width;
+	min-height: $height;
+	padding: 0 2em;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Responsive Font-Sizes 1200px wide and below */
+$rlogo: clamp(1.9em,5vw,2.2em);
+$rnav: clamp(1em,5vw,1.1em);
+$rheadline:clamp(3em,10vw,5em);
+$rsubheadline: clamp(2em,10vw,2.5em);
+$rh1: clamp(1.8em,5vw,2.3em);
+$rh2: clamp(1.5em,5vw,2em);
+$rh3: clamp(1.3em,5vw,1.8em);
+
+
+/* Colors */
+$dominant-color: rgb(213,204,204);
+$complementary-color: rgb(232,170,5);
+$accent-color: rgb(0,133,76);
+$greenish-color: rgb(0,90,52);
+$grayish-color: rgb(25,25,25);
+$grayish-color-2: rgb(200,193,191);
+

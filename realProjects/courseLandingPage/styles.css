@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*,*::before,*::after
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif , "Font Awesome 5 Brands", "Font Awesome 5 Free";
+}
+.all-background
+{
+	background-image: linear-gradient(to left top, #0d989d, #07868c, #03757b, #01646a, #005359);
+}
+.all-container
+{
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+	max-width: 1200px;	
+	min-height: 100vh;
+	padding: 1em 1.5em;
+	display: flex;
+	flex-direction: column;
+}

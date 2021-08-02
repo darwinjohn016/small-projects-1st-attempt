@@ -1,0 +1,47 @@
+@mixin container($width,$height)
+{
+	max-width: $width;
+	min-height: $height;
+	padding: 5em 3em;
+	margin: 0 auto;
+	position: relative;
+}
+
+@mixin container1($width,$height)
+{
+	width: $width;
+	min-height: $height;
+	position: relative;
+}
+
+@mixin container2($width,$height)
+{
+	width: $width;
+	height: $height;
+}
+
+
+
+@mixin flex($justify,$align,$direction,$wrap)
+{
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+
+
+
+$headline: calc(1.7em + 0.5vw);
+$h1: calc(1.4em + 0.5vw);
+$h2: calc(1em + 0.5vw);
+$p1: calc(1em + 0.1vw);
+$p2: calc(0.9em + 0.1vw);
+$p3: calc(0.8em + 0.1vw);
+
+
+
+$dominant: #FFFFFF;
+$complementary: #00754B;
+$accent: #05C19C;

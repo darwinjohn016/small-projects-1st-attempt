@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+@import './_variables.scss';
+
+*,*::before,*::after
+{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: 'Nunito', sans-serif , "Font Awesome 5 Free", "Font Awesome 5 Brands";
+	// border: 1px solid #444;
+
+}
+
+body
+{
+	overflow-x: hidden;
+	background: $dominant-color;
+
+}
+
+@import './_home.scss';
+@import './_destination.scss';
+@import './_services.scss';
+@import './_contact.scss';
+
+.bg-5
+{
+	@include container(100%,100vh);
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../images/manila-bg.jpg);
+	background-size: cover;
+	z-index: 4;
+	position: relative;
+
+	.contact-container
+	{
+		@include container(1200px,100vh);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 2.5fr;
+		grid-template-areas: 
+		"header content"
+		"form content";
+
+
+		.header
+		{
+			grid-area: header;
+			@include flex(center,flex-start,column);
+			padding-top: 1.5em;
+
+
+			h1
+			{
+				font-size: $rh1;
+				color:$complementary-color;
+			}
+			p
+			{
+				color: $dominant-color;
+				margin-top: .8em;
+			}
+		}
+
+		.form-bx
+		{
+			grid-area: form;
+			@include flex(flex-start,center,row);
+
+			form
+			{
+				width: 400px;
+				height: 400px;
+				background:rgba(213,204,204,0.1);
+				backdrop-filter: blur(2px);
+				border-radius: 10px;
+				padding: 1em;
+				@include flex(space-around,center,column);
+
+				.input-bx
+				{
+					@include flex(space-evenly,flex-start,column);
+					width: 80%;
+					position: relative;
+
+					label
+					{
+						font-size: 1.1em;
+						color: $dominant-color;
+					}
+					input,textarea
+					{
+						width: 100%;
+						padding: 0.4em 0.5em;
+						font-size: 1em;
+						outline: none;
+						border: none;
+					}
+				}
+				button
+				{
+					padding: 0.4em 1em;
+					font-weight: bold;
+					font-size: 1.1em;
+					color: $dominant-color;
+					background: $accent-color;
+					border:none;
+					outline:none;
+					cursor:pointer;
+					border-radius: 5px;
+					text-transform: uppercase;
+					align-self: flex-start;
+					margin: 1em 0 0 2em;
+
+				}
+			}
+		}
+
+		.content-bx
+		{
+			grid-area: content;
+			@include flex(flex-end,center,row);
+			position: relative;
+
+			.guidelines-bx
+			{
+				@include flex(space-evenly,center,column);
+				background:  rgba(232,170,5,0.8);
+				width: 70%;
+				height: 120%;
+				transform: rotate(10deg);
+				padding: 1em;
+
+				h1
+				{
+					font-size: $rh1;
+					transform: rotate(-10deg);
+					color: $greenish-color;
+				}
+
+				.option-bx
+				{
+					@include flex(center,flex-end,column);
+					transform: rotate(-10deg);
+					a
+					{
+						text-decoration: none;
+						font-size: 1.7em;
+						margin-bottom: .8em;
+						color: $grayish-color;
+						text-align: right;
+
+						i
+						{
+							margin-left: .5em;
+						}
+					}
+
+				}
+
+				.contact-bx
+				{
+					@include flex(center,flex-end,column);
+					transform: rotate(-10deg);
+					
+					p
+					{
+						text-align: right;
+						color: $grayish-color;
+						font-size: 1.02em;
+						i
+						{
+							margin-left: .5em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.bg-6
+{
+	position: relative;
+	z-index: 5;
+	background-color: $greenish-color;
+	@include container(100%,50vh);
+
+	footer
+	{
+		@include container(1200px,50vh);
+		position: relative;
+
+		h2
+		{
+			color: $dominant-color;
+			font-size: $rh2;
+			padding-top: 2em;
+		}
+		.about-bx
+		{
+			width: 100%;
+			min-height: 130px;
+			@include flex(space-between,center,row);
+			margin: 1.5em 0;
+
+			.content-bx
+			{
+				width: 45%;
+				height: 130px;
+				@include flex(space-between,flex-start,column);
+				h3
+				{
+					color: $complementary-color;
+					font-size: 1.5em;
+				}
+				p
+				{
+					color: $dominant-color;
+				}
+			}
+			.social-bx
+			{
+				width: 45%;
+				height: 130px;
+				h3
+				{
+					color: $dominant-color;
+				}
+				ul
+				{
+					display: flex;
+					list-style: none;
+					margin-top: .8em;
+					li
+					{
+						margin: 0 .8em;
+						&:first-child
+						{
+							margin-left: 0em;
+						}
+						&:nth-child(even)
+						{
+							margin: 0 .4em;
+						}
+						&:last-child
+						{
+							margin-right: 0em;
+						}
+						a
+						{
+							font-size: 1.8em;
+							text-decoration: none;
+							color: $complementary-color;
+						}
+					}
+				}
+			}
+		}
+		.copyright-bx
+		{
+			width: 100%;
+			min-height: 100px;
+			@include flex(space-around,flex-start,column);
+			p
+			{
+				color: $dominant-color;
+			}
+			.link-bx
+			{
+				ul
+				{
+					display: flex;
+					list-style: none;
+					li
+					{
+						margin: 0 .8em;
+						&:first-child
+						{
+							margin-left: 0em;
+						}
+						&:nth-child(even)
+						{
+							margin: 0 .4em;
+						}
+						&:last-child
+						{
+							margin-right: 0em;
+						}
+						a
+						{
+							text-decoration: none;
+							color: $complementary-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

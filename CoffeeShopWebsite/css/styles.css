@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+:root
+{
+	--clr-dominant: #4b2d00;
+	--clr-dominant-l: #683F02;
+	--clr-complementary: #f8c73c;
+	--clr-accent: #006e61;
+	--clr-dark: #000;
+	--clr-light: #dfe0df;
+	--ff-secondary: 'Courgette', cursive;
+}
+
+*,
+*::before,
+*::after
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif, "Font Awesome 5 Free", "Font Awesome 5 Brands";
+}
+
+html,
+body
+{
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body
+{
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3
+{
+	line-height: 1.1;
+}
+
+h1
+{
+	font-size: 3.2rem;
+}
+
+h2
+{
+	font-size: 2.4rem;
+}
+
+h3
+{
+	font-size: 2.08rem;
+}
+
+p
+{
+	font-size: 1.6rem;
+}
+
+.btn
+{
+	display: block;
+	font-weight: bold;
+	font-size: 1.6rem;
+	border: none;
+	cursor: pointer;
+	padding: 0.5em 1em;
+}
+
+.main-bg
+{
+	background: var(--clr-dominant);
+}
+
+header
+{
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--clr-dominant-l);
+	color: var(--clr-light);
+}
+
+.logo
+{
+	font-size: 2.3rem;
+	color: var(--clr-complementary);
+	font-family: var(--ff-secondary);
+}
+
+.desktop-nav
+{
+	display: none;
+}
+
+#mobile-open,
+#mobile-close
+{
+	cursor: pointer;
+	font-size: 2.4rem;
+}
+
+#mobile-close
+{
+	display: none;
+}
+
+.mobile-header
+{
+	background: var(--clr-dominant-l);
+	clip-path: polygon(100% 0%, 100% 0, 0 0, 0% 0%);
+	padding: 2rem;	
+	display: none;
+}
+
+.mobile-header-slidedown
+{
+	animation-name: slideDown;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+	from {
+		clip-path: polygon(100% 0%, 100% 0, 0 0, 0% 0%);
+	}
+	to {
+		clip-path: polygon(100% 0, 100% 100%, 0 100%, 0% 0%);
+	}
+}
+
+.mobile-nav a
+{
+	display: flex;
+	font-size: 1.7rem;
+	text-decoration: none;
+	color: var(--clr-light);
+}
+
+.mobile-nav a + a
+{
+	margin-top: 0.5em;
+}
+
+.main-content
+{
+	padding: 6rem 2rem;
+}
+
+.main-headline
+{
+	font-size: clamp(3rem,6vw,4rem);
+	margin-bottom: 0.5em;
+	color: var(--clr-complementary);
+	font-family: var(--ff-secondary);
+}
+
+.main-intro
+{
+	 color: var(--clr-light);
+	 font-weight: lighter;
+	 margin-bottom: 2em;
+}
+
+.cta-btn
+{
+	background: var(--clr-accent);
+	color: var(--clr-light);
+	margin-bottom: 0.7em;
+}
+
+.outline-btn
+{
+	outline: 3px solid var(--clr-accent);
+	outline-offset: -3px;
+	background: transparent;
+	color: var(--clr-light);
+}
+
+.swiper-container
+{
+	width: 100%;
+	height: 325px;
+}
+
+.swiper-slide
+{
+	width: 250px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	color: var(--clr-light);
+}
+
+.swiper-slide img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.swiper-slide:nth-child(odd) img
+{
+	transform: translateX(-4rem) rotate(20deg);
+}
+
+.swiper-slide:nth-child(even) img
+{
+	transform: translateX(-4rem) rotate(-20deg);
+}
+
+.swiper-slide:nth-child(4) img
+{
+	transform: translateX(-5rem) rotate(-20deg);
+}
+
+.swiper-slide:nth-child(5) img
+{
+	transform: translateX(-7rem) translateY(0.5rem) rotate(-20deg);
+}
+
+.swiper-slide h2, .swiper-slide p
+{
+	padding: 0em 2rem;
+}
+
+.swiper-slide h2
+{
+	margin: 0.7em 0 0.5em 0;
+	color: var(--clr-complementary);
+	font-family: var(--ff-secondary);
+}
+
+.swiper-slide p
+{
+	font-size: 1.4rem;
+	font-weight: lighter;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next
+{
+	display: none;
+}
+
+
+
+@media(min-width: 600px){
+	.main-container
+	{
+		display: grid;
+		grid-template-columns: 
+		minmax(1em,5%)
+		minmax(30rem,1fr)
+		minmax(20rem,1fr)
+		minmax(1em,5%);
+	}
+	header
+	{
+		grid-column: 1/-1;
+		display: grid;
+		grid-template-columns: 
+		minmax(1em,5%)
+		minmax(30rem,1fr)
+		minmax(20rem,1fr)
+		minmax(1em,5%);
+	}
+	#mobile-open,
+	#mobile-close
+	{
+		grid-column: 3/4;
+		justify-self: end;
+	}
+	.mobile-header
+	{
+		grid-column: 1/-1;
+		padding: 2rem 4.5rem;
+	}
+	.logo
+	{
+		grid-column: 2/3;
+		align-self: center;
+	}
+	.main-content
+	{
+		grid-column: 2/3;
+		padding: 6rem 1rem;
+	}
+	.swiper-container
+	{
+		grid-column: 3/4;
+		justify-self: end;
+	}
+}
+
+@media(min-width: 950px)
+{
+	#mobile-open
+	{
+		display: none !important;
+	}
+	.desktop-nav
+	{
+		display: flex;
+		grid-column: 3/4;
+		justify-self: end;
+	}
+	.desktop-nav a
+	{
+		font-size: 1.7rem;
+		margin-left: 1em;
+		text-decoration: none;
+		color: var(--clr-light);
+	}
+}
+
+
+
+
+
+
+
+
+

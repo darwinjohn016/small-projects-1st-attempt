@@ -1,0 +1,155 @@
+.clock-container
+{
+	max-width: 100%;
+	min-height: 100vh;
+	background: rgb(33,33,33);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.analog-clock
+{
+	display: flex;
+	justify-content: center;
+	width: 400px;
+	height: 400px;
+	background-image: url('images/clock-bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	border-radius: 50%; 
+	position: relative;
+	align-items: center;
+	box-shadow: inset -5px -5px 15px rgba(255,255,255,0.1),
+	inset 5px 5px 15px rgba(0,0,0,0.4);
+}
+.analog-hr-arrow,.analog-min-arrow,.analog-sec-arrow
+{
+	position: absolute;
+	transform-origin: bottom;
+	width: 5px;
+}
+.analog-hr-arrow
+{
+	top: 120px;
+	background: #FF00FF;
+	height: 80px;
+	z-index: 4;
+}
+.analog-min-arrow 
+{
+	top: 80px;
+	background: #008E99;
+	height: 120px;
+	z-index: 3;
+}
+.analog-sec-arrow
+{
+	top: 70px;
+	background: #00C896;
+	height: 130px;
+	z-index: 2;
+}
+.analog-circle
+{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgb(119,119,119);
+	z-index: 5;
+}
+.digital-clock
+{
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+	height: 300px;
+	position: relative;
+	z-index: 3;
+	align-items: center;
+
+}
+.digital-hr-bx,.digital-min-bx,.digital-sec-bx
+{
+	width: calc(376px / 3);
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	color: rgb(220,205,205);
+}
+.digital-hr-bx,.digital-min-bx
+{
+	background: rgb(0,196,224);
+}
+.digital-sec-bx
+{
+	background: rgb(255,114,200);
+}
+.digital-hr-txt,.digital-min-txt,.digital-sec-txt
+{
+	font-size: clamp(3em,5vw,4em);
+}
+.digital-hr-bx h2,.digital-min-bx h2,.digital-sec-bx h2
+{
+	width: inherit;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: clamp(1em,5vw,1.5em);
+}
+.digital-hr-bx h2,.digital-min-bx h2
+{
+	background: rgb(11,168,158);
+}
+.digital-sec-bx h2
+{
+	background: rgb(224,58,137);
+}
+
+
+@media (max-width: 768px)
+{
+	.clock-container
+	{
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+	.digital-clock,.analog-clock
+	{
+		margin: 1.5em 0;
+	}
+}
+
+@media (max-width: 480px)
+{
+	.digital-clock,.analog-clock
+	{
+		width: 300px;
+		height: 300px;
+	}
+	.digital-hr-bx,.digital-min-bx,.digital-sec-bx
+	{
+		width: calc(280px / 3);
+	}
+	.analog-hr-arrow
+	{
+		top: 100px;
+		height: 50px;
+	}
+	.analog-min-arrow
+	{
+		top: 70px;
+		height: 80px;
+	}
+	.analog-sec-arrow
+	{
+		top: 60px;
+		height: 90px;
+	}
+}
